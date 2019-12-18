@@ -3,7 +3,7 @@
 	public class Enemy extends MovieClip{
 		public static var spdX:Number;
 		public static var spdY:Number;
-	 
+		public var active:Boolean; 
 		public function Enemy(startX:Number,startY:Number) {
 			x=startX;
 			y=startY;
@@ -11,6 +11,7 @@
 			spdX = 4;
 			spdY = 5;
 			
+			active = true;
 		}
 		
 		public function moveDown():void
@@ -27,16 +28,8 @@
 				spdY=spdY+1;
 			}
 		}
-		private var frameNum:Number = 0;
+		
 		public function tick():void{
-			if(Math.random()<0.75){
-				this.nextFrame();
-				frameNum++;
-			}
-			if(frameNum>30){
-				this.gotoAndPlay(1);
-				frameNum = 0;
-			}
 			moveDown();
 			rotation+=-10+Math.random()*20;
 			
