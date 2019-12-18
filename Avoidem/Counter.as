@@ -22,6 +22,10 @@
 			updateDisplay();
 		}
  
+ 		public function setValue( amount:Number ):void{
+			currentValue = amount;
+			updateDisplay();
+		}
  		
 		public function updateDisplay():void
 		{

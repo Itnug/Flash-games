@@ -14,6 +14,7 @@
 		private var baseSpeed:Number;
 		
 		public function Avatar() {
+			gotoAndStop(1);
 			x= 0;
 			y= 0;
 			
@@ -23,7 +24,7 @@
 			rightKeyPressed = false;
 			
 			baseSpeed = 2;
-			addEventListener(Event.ADDED_TO_STAGE, onAddToStage);
+			//addEventListener(Event.ADDED_TO_STAGE, onAddAvatarToStage);
 		}
 		
 		public function useKeyControl():void{
@@ -67,7 +68,7 @@
 			}
 		}
 		
-		public function onAddToStage(event:Event):void{
+		public function onAddAvatarToStage(event:Event):void{
 			//trace("staged");
 			stage.addEventListener(KeyboardEvent.KEY_DOWN, onKeyPress);
 			stage.addEventListener(KeyboardEvent.KEY_UP, onKeyRelease);
